@@ -14,7 +14,8 @@ from config import PERSONS, AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS, RUBIS, LAY
 ## assets
 from storybuilder.assets import basic, accessory
 ## local files
-from src.chapter.main import ch_tmp
+from src.tokimen.main import ch_tokimen
+
 
 ## define alias
 W = Writer
@@ -47,7 +48,7 @@ _ = Writer.getWho()
 def create_world():
     """Create a world.
     """
-    w = World("title")
+    w = World("落語集")
     w.setCommonData()
     w.setAssets(basic.ASSET)
     w.setAssets(accessory.ASSET)
@@ -60,14 +61,14 @@ def create_world():
     # w.entryBlock()
     # w.entryHistory()
     # w.entryLifeNote()
-    w.setOutline("__outline__")
+    w.setOutline("様々な落語調小説たち")
     return w
 
 
 def main(): # pragma: no cover
     w = create_world()
     return w.build(
-            ch_tmp(w),
+            ch_tokimen(w),
             )
 
 
